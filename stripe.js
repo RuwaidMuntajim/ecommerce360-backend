@@ -10,7 +10,7 @@ const stripe = require("stripe")('sk_test_51M1pSXISRMAhtHgJhZj9unrwCxiyQdZi569zb
 
 app.use(express.json());
 app.use(cors({
-  "origin": "http://localhost:3000"
+  "origin": "*"
 }))
 
 const calculateOrderAmount = (items) => {
