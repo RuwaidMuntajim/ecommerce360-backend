@@ -5,12 +5,12 @@ const app = express();
 const port = process.env.PORT | 4242
 
 // This is your test secret API key.
-const stripe = require("stripe")("Stripe API key");
+const stripe = require("stripe")("sk_test_51M1pSXISRMAhtHgJhZj9unrwCxiyQdZi569zbgiM2D52A7uIW9NXCDDKg3i19xmMLlffEBoPYSyf0P4j5pmTRITB00ASzJpik3");
 
 
 app.use(express.json());
 app.use(cors({
-  "origin": "http://localhost:3000"
+  "origin": "*"
 }))
 
 app.options('*', cors())
