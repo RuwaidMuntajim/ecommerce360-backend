@@ -5,15 +5,19 @@ const app = express();
 const port = process.env.PORT | 4242
 
 // This is your test secret API key.
-const stripe = require("stripe")('sk_test_51M1pSXISRMAhtHgJhZj9unrwCxiyQdZi569zbgiM2D52A7uIW9NXCDDKg3i19xmMLlffEBoPYSyf0P4j5pmTRITB00ASzJpik3');
+const stripe = require("stripe")("sk_test_51M1pSXISRMAhtHgJhZj9unrwCxiyQdZi569zbgiM2D52A7uIW9NXCDDKg3i19xmMLlffEBoPYSyf0P4j5pmTRITB00ASzJpik3");
 
 
 app.use(express.json());
 app.use(cors({
+<<<<<<< HEAD
   "origin": "*",
+=======
+  "origin": 'https://ecommerce360.netlify.app'
+>>>>>>> 757a77ea164b6116884201e3a4949cb77edc414a
 }))
 
-app.options('*', cors())
+app.options('https://ecommerce360.netlify.app', cors())
 
 const calculateOrderAmount = (items) => {
   // Replace this constant with a calculation of the order's amount
