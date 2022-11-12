@@ -10,10 +10,10 @@ const stripe = require("stripe")('sk_test_51M1pSXISRMAhtHgJhZj9unrwCxiyQdZi569zb
 
 app.use(express.json());
 app.use(cors({
-  "origin": "*"
+  "origin": "https://ecommerce360.netlify.app"
 }))
 
-app.options('*', cors())
+app.options('https://ecommerce360.netlify.app', cors())
 
 const calculateOrderAmount = (items) => {
   // Replace this constant with a calculation of the order's amount
