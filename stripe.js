@@ -10,8 +10,10 @@ const stripe = require("stripe")('sk_test_51M1pSXISRMAhtHgJhZj9unrwCxiyQdZi569zb
 
 app.use(express.json());
 app.use(cors({
-  "origin": "*"
+  "origin": "http://localhost:3000"
 }))
+
+app.options('*', cors())
 
 const calculateOrderAmount = (items) => {
   // Replace this constant with a calculation of the order's amount
@@ -21,7 +23,7 @@ const calculateOrderAmount = (items) => {
 };
 
 app.get("/", (req, res) => {
-  res.send("Hi there")
+  res.json({"hello": "Hi there"})
 })
 
 app.post("/create-payment-intent", async (req, res) => {
